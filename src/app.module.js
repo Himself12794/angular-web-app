@@ -6,8 +6,8 @@ import 'angular-animate';
 import 'angular-aria';
 
 import { AppComponent } from './app.component';
-import { View1Module } from './view1/view1.modules';
-import { View2Module } from './view2/view2.modules';
+import { HomeModule } from './home/home.modules';
+import { MortageCalculatorModule } from './mortgage-calculator/mortgage-calculator.modules';
 
 import 'bootstrap';
 const css = require('./scss/styles.scss');
@@ -15,8 +15,8 @@ const css = require('./scss/styles.scss');
 export const app = angular.module('app', [
     uiRouter,
     ngMaterial,
-    View1Module,
-    View2Module
+    HomeModule,
+    MortageCalculatorModule
   ])
   .component('app', AppComponent) 
   .config(($locationProvider, $urlMatcherFactoryProvider, $uiRouterProvider, $stateProvider, $urlRouterProvider) => {
@@ -26,13 +26,13 @@ export const app = angular.module('app', [
     $locationProvider.html5Mode(true);
 
     $stateProvider
-      .state('view1', {
+      .state('home', {
         url: '/',
-        component: 'view1'
+        component: 'home'
       })
-      .state('view2', {
-        url: '/view2',
-        component: 'view2'
+      .state('mortgage-calculator', {
+        url: '/mortgage-calculator',
+        component: 'mortgageCalculator'
       });
   
     $urlRouterProvider.otherwise('/');

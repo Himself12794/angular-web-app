@@ -1,13 +1,13 @@
-import template from './view1.html';
+import template from './home.html';
 
-export const View1Component = {
+export const HomeComponent = {
     template,
-    controller: class View1Component {
+    controller: class HomeComponent {
         constructor($state) {
             'ngInject';
             this.$state = $state;
 
-            this.title = 'VIEW 1';
+            this.title = 'HOME';
         }
 
         $onInit() {
@@ -31,8 +31,8 @@ export const View1Component = {
             return `${dd}/${mm}/${yyyy}`;
         }
 
-        navigateToView2() {
-            this.$state.go('view2');
+        navigateToMortgageCalculator() {
+            this.$state.go('mortgage-calculator');
         }
     }
 };
